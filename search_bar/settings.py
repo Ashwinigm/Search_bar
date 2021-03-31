@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +25,7 @@ SECRET_KEY = '@ul&jr69f1@+-02z7ir!7&1d&(znbp5-0dk(s3vcsk(4ed4g-y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['18.218.242.136']
 
 
 # Application definition
@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'search_bar.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'search_db',
-        'USER': 'sg',
-        'PASSWORD': 'Sickgatorz123!',
-        'HOST': 'localhost',
+        'NAME': 'djangosearchdb',
+        'USER': 'admin',
+        'PASSWORD': '12345678',
+        'HOST': 'sync-db.cldl9j2fxicq.us-east-2.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
@@ -123,3 +123,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
