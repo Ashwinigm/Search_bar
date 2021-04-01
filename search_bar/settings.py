@@ -25,7 +25,7 @@ SECRET_KEY = '@ul&jr69f1@+-02z7ir!7&1d&(znbp5-0dk(s3vcsk(4ed4g-y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['18.218.242.136']
 
 
 # Application definition
@@ -74,13 +74,26 @@ WSGI_APPLICATION = 'search_bar.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# Local database
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'search_db',
+#        'USER': 'sg',
+#        'PASSWORD': 'Sickgatorz123!',
+#        'HOST': 'localhost',
+#        'PORT': '3306',
+#    }
+#}
+
+# AWS database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'search_db',
-        'USER': 'sg',
-        'PASSWORD': 'Sickgatorz123!',
-        'HOST': 'localhost',
+        'NAME': 'djangosearchdb',
+        'USER': 'admin',
+        'PASSWORD': '12345678',
+        'HOST': 'sync-db.cldl9j2fxicq.us-east-2.rds.amazonaws.com',
         'PORT': '3306',
     }
 }

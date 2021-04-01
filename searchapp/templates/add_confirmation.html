@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>Sync</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'search.css' %}" />
@@ -14,6 +15,8 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
+
+    <title>Sync</title>
   </head>
   <body>
     <!-- Begin Nav Bar -->
@@ -58,71 +61,19 @@
       </div>
     </nav>
     <!-- End Nav Bar -->
-
     <div class="main">
-      <h1>Search Results</h1>
-      {% if not object_list %}
-      <p>No Rooms with the specified name where found...</p>
-      {% else %}
-      <div class="search_box">
-        <div class="dropdown" style="float: left">
-          <button
-            class="btn btn-secondary dropdown-toggle"
-            type="button"
-            id="dropdownMenuButton1"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Room Name
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="{% url 'home' %}">All</a></li>
-            <li>
-              <a class="dropdown-item" href="{% url 'searchbyname' %}"
-                >Room name</a
-              >
-            </li>
-            <li>
-              <a class="dropdown-item" href="{% url 'searchbygenre' %}"
-                >Genre</a
-              >
-            </li>
-          </ul>
-        </div>
+      <h1>You have successfully added a room.</h1>
+      <h2>Rooms are not currently avaliable...</h2>
 
-        <form action="{% url 'search_results' %}" method="get">
-          <input
-            name="q"
-            type="text"
-            placeholder="Search..."
-            class="form-control search_bar"
-            style="float: left; width: 300px"
-          />
-          <input
-            type="submit"
-            value="Search for Room"
-            class="btn btn-dark"
-            style="float: left"
-          />
-        </form>
-      </div>
-
-      <div class="result_box">
-        {% for room in object_list %}
-        <div class="result_card">
-          <img src="{% static 'tfotl.jpg' %}" />
-          <br />{{ room.room_name }}<br />
-          <em>{{ room.genre }}</em>
-        </div>
-        {% endfor %}
-      </div>
-      {% endif %}
-    </div>
+      <form action="{% url 'home' %}">
+    <input type="submit" value="Return Home" />
+</form>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
       crossorigin="anonymous"
     ></script>
+
   </body>
 </html>

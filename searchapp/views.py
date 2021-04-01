@@ -87,3 +87,6 @@ def add_room(request):
         ins.save()
         print("Saved to db")
     return render(request,'add_room.html')
+
+class add_confirmation(TemplateView):
+    template_name = 'add_confirmation.html'
