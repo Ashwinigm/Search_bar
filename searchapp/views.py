@@ -34,3 +34,6 @@ class SearchResultsView(ListView):
             Q(room_name__icontains=query) | Q(genre__icontains=query)
         )
         return object_list
+
+class CreateRoomsView(TemplateView):
+    template_name = 'create_room.html'
