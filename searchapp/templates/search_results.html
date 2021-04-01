@@ -2,18 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="button.css" />
+    <!--<link rel="stylesheet" type="text/css" href="./search.css" />-->
+
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'search.css' %}" />
+
     <title>Search</title>
   </head>
-  <body>
-    <h1>Search Results</h1>
+  <body class="body">
+    <div class="navbar">Sync</div>
+    <div class="flex">
+      <h1>Search Results</h1>
 
-    <div class="result_box">
-      {% for room in object_list %}
-      <div class="result_card">
-        {{ room.room_id }}, {{ room.room_name }}, {{ room.genre }}
+      <form action="{% url 'search_results' %}" method="get" class="search_box">
+        <input
+          name="q"
+          type="text"
+          placeholder="Search room name or genre..."
+          class="search_bar"
+        />
+        <input type="submit" value="Search for Room" class="search_button" />
+      </form>
+
+      <div class="result_box">
+        {% for room in object_list %}
+        <div class="result_card">
+          <img src="{% static 'tfotl.jpg' %}" />
+          <br />{{ room.room_name }}<br />
+          <em>{{ room.genre }}</em>
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
   </body>
 </html>

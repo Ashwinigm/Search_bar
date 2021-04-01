@@ -4,30 +4,11 @@
 
 body {
   background-color: #888888;
-  font-family: "Franklin Gothic Medium";
-}
-
-.flex {
   display: flex;
   flex-direction: column;
   margin: auto;
-  align-items: flex-start;
-}
-
-.flex div {
-  align-self: center;
-}
-
-.flex form {
-  align-self: center;
-}
-
-.flex h1 {
-  align-self: center;
-}
-
-.navbar {
-  justify-self: left;
+  align-items: center;
+  font-family: "Franklin Gothic Medium";
 }
 
 .result_box {
@@ -55,10 +36,10 @@ body {
   border-radius: 10px;
 }
 
-/* .search_box {
+.search_box {
   display: flex;
   flex-direction: column;
-} */
+}
 
 .search_bar {
   width: 400px;
