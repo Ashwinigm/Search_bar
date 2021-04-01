@@ -50,7 +50,7 @@
 
     <div class="dropdown" align="left">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        All
+        Genre
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
         <li><a class="dropdown-item" href="{% url 'home' %}">All</a></li>
@@ -59,12 +59,9 @@
       </ul>
     </div>
 
-    <form action="{% url 'search_results' %}" method="get">
+    <form action="{% url 'searchbygenre_view' %}" method="get">
         <input name="q" type="text" placeholder="Search..." align="center">
     </form>
-
-    <h1> Create Room </h1>
-    <a href="{% url 'add_room' %}"> Create room </a>
 
 
 

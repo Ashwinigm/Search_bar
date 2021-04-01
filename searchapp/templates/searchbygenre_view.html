@@ -7,7 +7,7 @@
 <body>
     <h1>Search Results</h1>
     {% if not object_list %}
-        <p>Sorry, Couldn't find any such room name or genre</p>
+        <p>Please enter a valid genre</p>
     {% else %}
         <ul>
           {% for room in object_list %}
